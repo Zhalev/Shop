@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiKey: "AIzaSyCRf_6KBp2oSv0ASt5LN5wMfwNGbkgz2n8",
+  fbDbUrl: "https://online-shop-4bf88-default-rtdb.firebaseio.com/",
 };
 
 /*

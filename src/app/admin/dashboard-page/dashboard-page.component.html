@@ -1,0 +1,6 @@
+<div *ngIf="products.length; else loading">
+
+</div>
+<ng-template #loading>
+  <p class="text-center">Loading...</p>
+</ng-template>
