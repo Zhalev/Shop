@@ -14,8 +14,14 @@ import {QuillModule} from 'ngx-quill';
 
 
 @NgModule({
-  declarations: [AdminLayoutComponent, LoginPageComponent, AddPageComponent, DashboardPageComponent, EditPageComponent,
-    OrdersPageComponent],
+  declarations: [
+    AdminLayoutComponent,
+    LoginPageComponent,
+    AddPageComponent,
+    DashboardPageComponent,
+    EditPageComponent,
+    OrdersPageComponent
+  ],
   imports: [
     CommonModule,
     FormsModule,

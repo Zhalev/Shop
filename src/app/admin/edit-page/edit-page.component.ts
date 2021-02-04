@@ -40,8 +40,7 @@ export class EditPageComponent implements OnInit {
     });
   }
 
-  // tslint:disable-next-line:typedef
-  submit() {
+  submit(): void {
     if (this.form.invalid) {
       return;
     }

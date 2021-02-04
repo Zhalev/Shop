@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {environment} from '../../environments/environment';
 import {map} from 'rxjs/operators';
 import {FbResponse, Product} from './interfaces';
+import {Observable} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -12,8 +13,7 @@ export class ProductService {
   constructor(private http: HttpClient) {
   }
 
-  // tslint:disable-next-line:typedef
-  create(product) {
+  create(product): Observable<Product> {
     return this.http.post(`${environment.fbDbUrl}/products.json`, product)
       .pipe(map((res: FbResponse) => {
         return {
@@ -25,8 +25,7 @@ export class ProductService {
 
   }
 
-  // tslint:disable-next-line:typedef
-  getAll() {
+  getAll(): Observable<any[]> {
     return this.http.get(`${environment.fbDbUrl}/products.json`)
       .pipe(map(res => {
         return Object.keys(res)
@@ -38,7 +37,7 @@ export class ProductService {
       }));
   }
   // tslint:disable-next-line:typedef
-  getById(id) {
+  getById(id): Observable<Product> {
     return this.http.get(`${environment.fbDbUrl}/products/${id}.json`)
       .pipe(map((res: Product) => {
         return {
@@ -48,10 +47,10 @@ export class ProductService {
           };
       }));
   }
-  remove(id) {
-    return this.http.delete(`${environment.fbDbUrl}/products/${id}.json`)
+  remove(id): Observable<any> {
+    return this.http.delete(`${environment.fbDbUrl}/products/${id}.json`);
   }
-  update(product: Product) {
-    return this.http.patch(`${environment.fbDbUrl}/products/${product.id}.json`, product)
+  update(product: Product): Observable<Product> {
+    return this.http.patch(`${environment.fbDbUrl}/products/${product.id}.json`, product);
   }
 }

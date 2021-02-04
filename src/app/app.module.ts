@@ -11,7 +11,6 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {QuillModule} from 'ngx-quill';
 import {AuthInterceptor} from './shared/auth.interceptor';
 import { ProductComponent } from './product/product.component';
-import { Test1Component } from './test1/test1.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +20,6 @@ import { Test1Component } from './test1/test1.component';
     ProductPageComponent,
     CartPageComponent,
     ProductComponent,
-    Test1Component
   ],
   imports: [
     BrowserModule,
